@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 
 export default class Timer extends Component {
+    
     state = {
         minutes: 25,
         seconds: 0,
     }
 
     componentDidMount() {
+        this.myInterval = setInterval(() => {
+            const { seconds, minutes } = this.state
+        })
+    }
+    startTimer() {
         this.myInterval = setInterval(() => {
             const { seconds, minutes } = this.state
 
@@ -28,18 +34,25 @@ export default class Timer extends Component {
         }, 1000)
     }
 
-    componentWillUnmount() {
+    pauseTimer() {
         clearInterval(this.myInterval)
+    }
+
+    resetTimer() {
+        this.setState(() => ({
+            minutes: 25,
+            seconds: 0
+        }))
     }
 
     render() {
         const { minutes, seconds } = this.state
         return (
             <div>
-                { minutes === 0 && seconds === 0
-                    ? <h1>Busted!</h1>
-                    : <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
-                }
+                <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                <div onClick={this.startTimer.bind(this)}>Start Pomodoro</div>
+                <div onClick={this.pauseTimer.bind(this)}>Pause Pomodoro</div>
+                <div onClick={this.resetTimer.bind(this)}>Reset Pomodoro</div>
             </div>
         )
     }
