@@ -7,6 +7,15 @@
   }
 }
 
+footer {
+  background-color: black;
+  color: white;
+  height: 125px;
+  position: absolute;
+  bottom: 0;
+}
+footer a { color: white; }
+
 /* #timer .btn { display: block; } */
 
 .countdown-timer {

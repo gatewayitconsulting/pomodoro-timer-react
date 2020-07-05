@@ -76,38 +76,36 @@ export default class Timer extends Component {
         const { minutes, seconds, breakMinutes, breakSeconds, timeLeft } = this.state
         return (
             <div id="timer">
-                <section class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            { minutes === 0 && seconds === 0
-                                ? <h2 class="text-center">Please take a Break!</h2>
-                                : <h2 class="text-center">Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h2>
-                            }
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        { minutes === 0 && seconds === 0
+                            ? <h2 class="text-center">Please take a Break!</h2>
+                            : <h2 class="text-center">Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h2>
+                        }
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            {/* <div className="timer-wrapper">
-                                <CountdownCircleTimer
-                                isPlaying
-                                duration={timeLeft}
-                                colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
-                                onComplete={() => [true, 1000]}
-                                >
-                                {timeLeft}
-                                </CountdownCircleTimer>
-                            </div> */}
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {/* <div className="timer-wrapper">
+                            <CountdownCircleTimer
+                            isPlaying
+                            duration={timeLeft}
+                            colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
+                            onComplete={() => [true, 1000]}
+                            >
+                            {timeLeft}
+                            </CountdownCircleTimer>
+                        </div> */}
                     </div>
-                    <div class="row">
-                        <div class="col text-center">
-                            <button class="btn btn-success m-1" type="button" onClick={this.startTimer.bind(this)}
-                            disabled={this.state.disabled}>Start Pomodoro</button>
-                            <button class="btn btn-info m-1" type="button" onClick={this.pauseTimer.bind(this)}>Pause Pomodoro</button>
-                            <button class="btn btn-danger m-1" type="button" onClick={this.resetTimer.bind(this)}>Reset Pomodoro</button>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button class="btn btn-success m-1" type="button" onClick={this.startTimer.bind(this)}
+                        disabled={this.state.disabled}>Start Pomodoro</button>
+                        <button class="btn btn-info m-1" type="button" onClick={this.pauseTimer.bind(this)}>Pause Pomodoro</button>
+                        <button class="btn btn-danger m-1" type="button" onClick={this.resetTimer.bind(this)}>Reset Pomodoro</button>
                     </div>
-                </section>
+                </div>
             </div>
         )
     }
