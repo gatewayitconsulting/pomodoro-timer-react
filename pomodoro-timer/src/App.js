@@ -7,7 +7,7 @@ import './assets/css/material-kit.css';
 function App() {
   return (
     <div className="App">
-      <main>
+      <main class="container-fluid">
         <Timer />
       </main>
     </div>

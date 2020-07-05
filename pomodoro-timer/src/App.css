@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* #timer .btn { display: block; } */
+
+.countdown-timer {
+  width: 52px;
+  height: 52px;
+  background-color: black;
+}
+
+.countdown-timer-circle circle {
+  stroke-dasharray: 151px;
+  stroke-dashoffset: 151px;
+  stroke-linecap: butt;
+  stroke-width: 4px;
+  stroke: #fd4f57;
+  fill: none;
+}
+
+.countdown-timer-circle svg {
+  width: 52px;
+  height: 52px;
+  transform: rotateZ(-90deg);
+}
+
+@keyframes countdown-animation {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 151px;
   }
 }
